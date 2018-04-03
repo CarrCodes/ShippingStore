@@ -1,8 +1,7 @@
-package assign2_tac91;
+package assign5_tac91;
 
 import static java.lang.System.out;
 import java.util.*;
-
 /**
  * Subclass of Package Superclass
  * @author Taylor Carr
@@ -11,6 +10,21 @@ public class Envelope extends Package {
     private int height;
     private int width;
 
+    /**
+     * Constructor used to initialize the class fields of the class with the
+     * provided values.
+     * @param ptn
+     * @param specification
+     * @param mailingClass
+     * @param height
+     * @param width
+     */
+    public Envelope(String ptn, String specification, String mailingClass, Integer height, Integer width) {
+        super(ptn, specification, mailingClass);
+        this.height = height;
+        this.width = width;
+    }
+    
     /**
      * Adds Envelope object to Package ArrayList
      */

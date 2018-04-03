@@ -1,4 +1,4 @@
-package assign2_tac91;
+package assign5_tac91;
 
 import static java.lang.System.out;
 import java.util.Random;
@@ -12,6 +12,20 @@ import java.util.Scanner;
 public class Customer extends Users {
     private String phoneNumber;
     private String address;
+    
+    /**
+     * Constructor initializes a customer object with the provided values.
+     * @param id
+     * @param phoneNumber
+     * @param address
+     * @param firstName
+     * @param lastName
+     */
+    public Customer(int id, String firstName, String lastName, String phoneNumber, String address) {
+        super(id, firstName, lastName);
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
     
     /**
      * Adds a new customer to the users ArrayList

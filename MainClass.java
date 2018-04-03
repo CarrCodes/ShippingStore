@@ -6,17 +6,26 @@
  * past (completed) transactions.
  * 
  * @author Taylor Carr
- * @version 1.1
+ * @version 1.3
  * @since 2017-09-25
  */
 
-package assign2_tac91;
+package assign5_tac91;
+
+import java.awt.Dimension;
+import javax.swing.JFrame;
+import java.util.logging.*;
 
 /**
  * Contains a try-catch for the readFile method in Menu and contains a 
- * while loop that keeps running until the user exits the program.
+ * Runnable that keeps a GUI running until the user exits the program.
  */
 public class MainClass extends Menu {
+
+    /**
+     *
+     */
+    public static final Logger logger = Logger.getLogger(GUI.class.getName());
     
     /**
      * Sets run flag that tells the program when to quit.
@@ -33,16 +42,21 @@ public class MainClass extends Menu {
             readFile();
         }
         catch (Exception e){
-            System.out.println("'packages.ser' does not exist. A file will be created.");
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, e);
+            //System.out.println("'packages.ser' does not exist. A file will be created.");
+        }
+        
+        Runnable r = new GUI();
+        Thread t = new Thread(r);
+        t.start();
+        try {
+            t.join();
+            saveDatabase();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainClass.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
-        
-        while (run == true){
-            if (displayMenu() == false){
-                run = false;
-            }
-        }
     }
     
 }

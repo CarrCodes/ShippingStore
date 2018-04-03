@@ -1,16 +1,27 @@
-package assign2_tac91;
+package assign5_tac91;
 
 import java.io.Serializable;
 
 /**
- *
  * @author Taylor Carr
+ * @version 1.3
  */
 public class Users implements Serializable {
     private int ID;
     private String firstName;
     private String lastName;
 
+    /**
+     *
+     * @param id
+     * @param firstName
+     * @param lastName
+     */
+    public Users(int id, String firstName, String lastName) {
+        this.ID = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
     /**
      *
      * @param newID
@@ -44,6 +55,22 @@ public class Users implements Serializable {
     public String getName(){
         String name = firstName + " " + lastName;
         return name;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public String getLastName() {
+        return lastName;
     }
 
 }

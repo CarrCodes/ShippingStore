@@ -1,4 +1,4 @@
-package assign2_tac91;
+package assign5_tac91;
 
 import static java.lang.System.out;
 import java.util.Scanner;
@@ -14,6 +14,23 @@ public class Employee extends Users {
     private int SSN;
     private float salary;
     private int bankNumber;
+    
+    /**
+     * Constructor initializes an employee object with the provided values.
+     * @param id
+     * @param firstName
+     * @param lastName
+     * @param socialSecurityNumber
+     * @param monthlySalary
+     * @param bankAccountNumber
+     */
+    public Employee(int id, String firstName, String lastName, int socialSecurityNumber, 
+            float monthlySalary, int bankAccountNumber) {
+        super(id, firstName, lastName);
+        this.SSN = socialSecurityNumber;
+        this.salary = monthlySalary;
+        this.bankNumber = bankAccountNumber;
+    }
     
     /**
      * Adds a new employee to the ArrayList

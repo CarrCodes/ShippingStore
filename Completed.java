@@ -1,4 +1,4 @@
-package assign2_tac91;
+package assign5_tac91;
 
 import java.io.Serializable;
 import static java.lang.System.out;
@@ -20,6 +20,24 @@ public class Completed implements Serializable {
     Date deliveryDate = new Date();
     private float cost;
     private int employeeID;
+    
+    /**
+     *
+     * @param cid
+     * @param tn
+     * @param sd
+     * @param dd
+     * @param c
+     * @param eid
+     */
+    public Completed(int cid, String tn, Date sd, Date dd, float c, int eid) {
+        this.customerID = cid;
+        this.trackingNumber = tn;
+        this.shippingDate = sd;
+        this.deliveryDate = dd;
+        this.cost = c;
+        this.employeeID = eid;
+    }
 
     /**
      *

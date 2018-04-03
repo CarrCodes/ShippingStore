@@ -1,4 +1,4 @@
-package assign2_tac91;
+package assign5_tac91;
 
 import static java.lang.System.out;
 import java.util.Scanner;
@@ -10,6 +10,21 @@ import java.util.Scanner;
 public class Box extends Package{
     private int dimensions;
     private int volume;
+    
+    /**
+     * Constructor used to initialize the class fields of the class with the
+     * provided values.
+     * @param ptn
+     * @param specification
+     * @param mailingClass
+     * @param height
+     * @param width
+     */
+    public Box(String ptn, String specification, String mailingClass, int d, int v) {
+        super(ptn, specification, mailingClass);
+        this.dimensions = d;
+        this.volume = v;
+    }
     
     /**
      * Adds Box object to Package ArrayList

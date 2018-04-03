@@ -1,4 +1,4 @@
-package assign2_tac91;
+package assign5_tac91;
 
 import static java.lang.System.out;
 import java.util.Scanner;
@@ -10,6 +10,12 @@ import java.util.Scanner;
 public class Crate extends Package {
     private float weight;
     private String content;
+    
+    public Crate (String ptn, String specification, String mailingClass, Float w, String c){
+        super(ptn, specification, mailingClass);
+        this.weight = w;
+        this.content = c;
+    }
     
     /**
      * Adds Crate object to Package ArrayList

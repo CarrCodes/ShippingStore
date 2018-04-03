@@ -2,12 +2,14 @@
  * @author Taylor Carr
  */
 
-package assign2_tac91;
+package assign5_tac91;
 
 import java.io.*;
 import java.util.*;
 import static java.lang.System.out;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * This menu handles all user input.
@@ -44,13 +46,15 @@ public class Menu {
         }
         catch (EOFException exc){
             // End of file
-            out.println("EOF");
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, exc);
         }
         catch (IOException ioe){
-            out.println("IO Error");
+            //out.println("IO Error");
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ioe);
         }
         catch (ClassNotFoundException cnfe){
-            out.println("Class not found");
+            //out.println("Class not found");
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, cnfe);
         }
     } 
     
@@ -59,7 +63,7 @@ public class Menu {
      * 
      * This method displays the menu to the user.
      * @return boolean
-     */
+     *//*
     public static boolean displayMenu(){
             System.out.println("---------------------------------------------------------");
             System.out.println("|                          Menu                         |");
@@ -123,7 +127,7 @@ public class Menu {
                         break;
             }
         return true;
-    }
+    }*/
     
     /**
      * <h2> Display Database </h2>
@@ -131,6 +135,7 @@ public class Menu {
      * This method displays the current database of packages to the user.
      */
     // Option 1
+    /*
     public static void displayDatabase(){
         
         sortPackageList(); // Sort before display
@@ -177,14 +182,14 @@ public class Menu {
             out.println("------------------------------------------------------------------------------");
             // out.println();
         }
-    }
+    }*/
     
     /**
      * <h2> Add a Package </h2>
      * 
      * This method adds a package to the database.
      */
-    // Option 2
+    /* Option 2
     public static void addPackage(){
   
         Package newPackage = new Package();
@@ -224,7 +229,7 @@ public class Menu {
                 break;
         }
         sortPackageList(); // Sort list after insert;
-    }
+    }*/
     
     /**
      * <h2> Remove a Package </h2>
@@ -232,6 +237,7 @@ public class Menu {
      * This method deletes a package from the database using the tracking number.
      */
     // Option 3
+    /*
     public static void deletePackage(){
         
         boolean found = false;
@@ -269,7 +275,7 @@ public class Menu {
                 i++;
             }
         }
-    }
+    }*/
     
     
     /**
@@ -279,6 +285,7 @@ public class Menu {
      * package in the database with the matching number.
      */
     // Option 4
+    /*
     public static void search(){
         boolean found = false;
         int i = 0;
@@ -344,7 +351,7 @@ public class Menu {
                 i++;
             }
         }
-    }
+    }*/
     
     /**
      * <h2> Show Users </h2>
@@ -353,6 +360,7 @@ public class Menu {
      * currently in the database.
      */
     // Option 5
+    /*
     public static void showUsers(){
         out.println();
         out.println("-------------------------------------------------------------------------------------");
@@ -381,7 +389,7 @@ public class Menu {
             out.println();
             out.println("-------------------------------------------------------------------------------------");
         }
-    }
+    }*/
     
     /**
      * <h2> Add User </h2>
@@ -389,6 +397,7 @@ public class Menu {
      * This method adds a user to the database/ArrayList
      */
     // Option 6
+    /*
     public static void addUser(){
         out.println();
         out.println("Is the new user an employee or a customer? ");
@@ -411,7 +420,7 @@ public class Menu {
                 out.println("Invalid user type.");
                 break;
         }
-    }
+    }*/
     
     /**
      * <h2> Update User </h2>
@@ -420,6 +429,7 @@ public class Menu {
      * in the database.
      */
     // Option 7
+    /*
     public static void updateUser(){
         boolean found = false;
         int i = 0;
@@ -520,7 +530,7 @@ public class Menu {
                 i++;
             }
         }
-    }
+    }*/
     
     /**
      * <h2> Complete Transaction </h2>
@@ -530,6 +540,7 @@ public class Menu {
      * shipping and cost information.
      */
     //Option 8
+    /*
     public static void completeTransaction(){
         out.print("Enter customer ID number: ");
         Scanner cin = new Scanner(System.in);
@@ -549,7 +560,6 @@ public class Menu {
                 out.println("Customer not found.");
             }
         }
-        
         
         if (valid == true){
             valid = false;
@@ -598,10 +608,9 @@ public class Menu {
             completedObj.setShippingDate();
             completedObj.setDeliveryDate();
             
-            
             completedList.add(completedObj);
         }
-    }
+    }*/
     
     /**
      * <h2> Show Completed Transactions </h2>
@@ -610,6 +619,7 @@ public class Menu {
      * in the database.
      */
     // Option 9
+    /*
     public static void showCompleted(){
         Completed completedObj;
         SimpleDateFormat dateFormat = new SimpleDateFormat ("MM/dd/yyyy");
@@ -637,7 +647,7 @@ public class Menu {
         }
         out.println();
         
-    }
+    }*/
     
     /**
      * <h2> Store the Databases </h2>
@@ -663,15 +673,15 @@ public class Menu {
             oos3.writeObject(completedList);
             fout3.close(); 
             
-            out.println("Exiting...");
+            Logger.getLogger(GUI.class.getName()).info("Saving...");
         }
         catch (IOException e){
-            out.println("IO error");
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
     /**
-     *
+     * Sorts Packages in the ArrayList
      */
     public static void sortPackageList(){
         Package sortObj, sortObj2, temp;
@@ -686,7 +696,7 @@ public class Menu {
                     temp = packageList.get(j);
                     packageList.set(j, sortObj2);
                     packageList.set(j+1, temp);
-                }
+                }   
             }
         }
     }

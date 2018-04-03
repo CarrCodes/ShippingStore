@@ -2,7 +2,7 @@
  * @author Taylor Carr
  */
 
-package assign2_tac91;
+package assign5_tac91;
 
 import  java.io.*;
 
@@ -15,6 +15,18 @@ public class Package implements Serializable {
     private String trackingNumber;
     private String specification;
     private String mailingClass;
+    
+    /**
+     *
+     * @param tn
+     * @param s
+     * @param mc
+     */
+    protected Package (String tn, String s, String mc) {
+        this.trackingNumber = tn;
+        this.specification = s;
+        this.mailingClass = mc;
+    }
     
     /**
      * Set the tracking number for the package

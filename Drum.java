@@ -1,4 +1,4 @@
-package assign2_tac91;
+package assign5_tac91;
 
 import static java.lang.System.out;
 import java.util.Scanner;
@@ -10,6 +10,12 @@ import java.util.Scanner;
 public class Drum extends Package {
     private String material;
     private float diameter;
+    
+    public Drum(String ptn, String specification, String mailingClass, String m, Float d) {
+        super(ptn, specification, mailingClass);
+        this.material = m;
+        this.diameter = d;
+    }
     
     /**
      * Adds Drum object to Package ArrayList
